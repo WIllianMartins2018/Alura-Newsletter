@@ -1,8 +1,16 @@
 import { MoonIcon, SunIcon } from "@heroicons/react/24/solid";
+import { useEffect } from "react";
 
 const ToggleTheme = () => {
+   // const systemPreferences = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const pageClasses = document.documentElement.classList
+
+    // useEffect( () => {
+    //     systemPreferences && pageClasses.add('dark');
+    // })
+
     const toggle = () => {
-        document.documentElement.classList.toggle('dark');
+        pageClasses.toggle('dark');
     }
 
     return <div className="hidden sm:block">
