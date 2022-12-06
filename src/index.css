@@ -1,70 +1,40 @@
-:root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+@layer components {
+    .alura-input {
+        @apply 
+            py-1 
+            pl-5 
+            w-full 
+            max-w-lg 
+            dark:bg-dark-200 
+            text-dark-200 
+            dark:text-gray-200 
+            rounded-full outline-none 
+            placeholder:text-gray-400 
+            placeholder:dark:text-gray-600 
+            placeholder:text-xs 
+            placeholder:uppercase 
+            placeholder:font-bold 
+            focus:border-2 
+            focus:border-alura-200 
+            focus:dark:border-alura-100 
+            invalid:focus:border-2 
+            invalid:focus:border-red-400 
+            invalid:focus:dark:border-2 
+            invalid:focus:dark:border-red-400
+            caret-alura-200
+            dark:caret-alura-100;
+    }
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
+    .alura-button {
+        @apply py-1 pl-5 w-full max-w-sm bg-alura-100 dark:bg-dark-200 rounded-full text-gray-200 uppercase outline-none hover:animate-pulse hover:shadow-md hover:shadow-gray-500 hover:dark:shadow-black hover:-translate-y-1 hover:delay-200;
+    }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+    .alura-tag {
+        @apply bg-alura-100 dark:bg-dark-100 px-4 py-1 rounded-full text-gray-200 font-bold text-xs uppercase hover:scale-110 hover:cursor-pointer hover:bg-gradient-to-r hover:from-alura-200 hover:dark:to-gray-600;
+    }
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
